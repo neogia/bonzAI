@@ -124,8 +124,8 @@ gulp.task('upload', gulp.series('compile', function uploading() {
 }));
 
 gulp.task('copyLocal', gulp.series('compile', function() {
-  return gulp.src('dist/dev/*')
-    .pipe(gulp.dest(config.localPath));
+  return gulp.src('dist/' + buildTarget + '/*')
+    .pipe(gulp.dest(config.localPath + buildConfig.branch));
 }));
 
 
